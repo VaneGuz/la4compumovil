@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LabsCM20171</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_personal_info">PersonalInfo</string>
+    <string-array name="items">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitario</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="boy">Masculino</string>
+    <string name="girl">Femenino</string>
+    <string name="tel">Teléfono</string>
+</resources>
