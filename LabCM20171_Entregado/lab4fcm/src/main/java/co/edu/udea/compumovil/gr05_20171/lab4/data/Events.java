@@ -13,6 +13,10 @@ public class Events {
     private String ubicacion;
     private String infoGeneral;
 
+    public Events() {
+
+    }
+
     public Events(String nombre, String descripcion, String puntuacion, String responsable, String fecha, String ubicacion, String infoGeneral, String foto) {
         this.nombre = nombre;
         this.descripcion = descripcion;

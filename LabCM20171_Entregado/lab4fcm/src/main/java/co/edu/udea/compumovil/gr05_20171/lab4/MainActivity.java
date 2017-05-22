@@ -47,11 +47,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //so close this activity
             finish();
 
+<<<<<<< HEAD
             //and open profile activity
             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
 
         //initializing views
+=======
+        progressDialog = new ProgressDialog(this);
+>>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
@@ -65,13 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewSignin.setOnClickListener(this);
     }
 
-    private void registerUser(){
+    private void registerUser() {
 
         //getting email and password from edit texts
         String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
         //checking if email and passwords are empty
+<<<<<<< HEAD
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Por favor ingrese el email",Toast.LENGTH_LONG).show();
             return;
@@ -79,6 +84,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(TextUtils.isEmpty(password)){
             Toast.makeText(this,"Por favor ingrese la contraseña",Toast.LENGTH_LONG).show();
+=======
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Ingrese el email", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Ingrese la contraseña", Toast.LENGTH_LONG).show();
+>>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
             return;
         }
 
@@ -94,12 +108,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
+<<<<<<< HEAD
                         if(task.isSuccessful()){
                             finish();
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         }else{
                             //display some message here
                             Toast.makeText(MainActivity.this,"Error en el registro",Toast.LENGTH_LONG).show();
+=======
+                        if (task.isSuccessful()) {
+                            //display some message here
+                            Toast.makeText(MainActivity.this, "Registro correcto", Toast.LENGTH_LONG).show();
+                        } else {
+                            //display some message here
+                            Toast.makeText(MainActivity.this, "Usuario ya registrado", Toast.LENGTH_LONG).show();
+>>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
                         }
                         progressDialog.dismiss();
                     }
@@ -109,6 +132,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+<<<<<<< HEAD
+=======
+        if (view == buttonRegister) {
+            registerUser();
+        }
+
+        if (view == textViewSignin) {
+
+        }
+    }
+
+}
+>>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
 
         if(view == buttonSignup){
             registerUser();
