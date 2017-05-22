@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //initializing views
 
-        progressDialog= new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
@@ -49,22 +49,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //attaching listener to button
         buttonRegister.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
-           }
+    }
 
-    private void registerUser(){
+    private void registerUser() {
 
         //getting email and password from edit texts
         String email = editTextEmail.getText().toString().trim();
-        String password  = editTextPassword.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
 
         //checking if email and passwords are empty
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Ingrese el email",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "Ingrese el email", Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Ingrese la contraseña",Toast.LENGTH_LONG).show();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "Ingrese la contraseña", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             //display some message here
-                            Toast.makeText(MainActivity.this,"Registro correcto",Toast.LENGTH_LONG).show();
-                        }else{
+                            Toast.makeText(MainActivity.this, "Registro correcto", Toast.LENGTH_LONG).show();
+                        } else {
                             //display some message here
-                            Toast.makeText(MainActivity.this,"Usuario ya registrado",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "Usuario ya registrado", Toast.LENGTH_LONG).show();
                         }
 
                     }
@@ -94,13 +94,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if(view == buttonRegister){
-        registerUser();
-    }
+        if (view == buttonRegister) {
+            registerUser();
+        }
 
-    if(view == textViewSignin){
+        if (view == textViewSignin) {
 
-    }
+        }
     }
 
 }
