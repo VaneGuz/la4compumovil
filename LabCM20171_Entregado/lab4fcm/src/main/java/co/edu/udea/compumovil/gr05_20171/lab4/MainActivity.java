@@ -20,10 +20,14 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //defining view objects
+
+    private EditText etUserRegister;
+    private EditText etDateRegister;
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private EditText confirmPass;
     private Button buttonSignup;
-
+    private Button buttonCancelar;
     private TextView textViewSignin;
 
     private ProgressDialog progressDialog;
@@ -51,26 +55,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //initializing views
+        etUserRegister = (EditText) findViewById(R.id.etUserRegister);
+        etDateRegister = (EditText) findViewById(R.id.etDateRegister);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        confirmPass = (EditText) findViewById(R.id.etPasswordConfirmer);
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
 
-        buttonSignup = (Button) findViewById(R.id.buttonSignup);
 
+        buttonSignup = (Button) findViewById(R.id.buttonSignup);
+        buttonCancelar = (Button) findViewById(R.id.buttonCancelar);
         progressDialog = new ProgressDialog(this);
 
         //attaching listener to button
+        buttonCancelar.setOnClickListener(this);
         buttonSignup.setOnClickListener(this);
         textViewSignin.setOnClickListener(this);
     }
 
     private void registerUser() {
 
-        //getting email and password from edit texts
+
+        String user = etUserRegister.getText().toString().trim();
+        String date = etDateRegister.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+        String confirmPassword = confirmPass.getText().toString().trim();
 
+        if (!password.equals(confirmPassword)) {
+            Toast pass = Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT);
+            pass.show();
+
+        }
         //checking if email and passwords are empty
+
+
+        if (TextUtils.isEmpty(user)) {
+            Toast.makeText(this, "Por favor ingrese el usuario", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(date)) {
+            Toast.makeText(this, "Por favor ingrese la edad", Toast.LENGTH_LONG).show();
+            return;
+        }
+
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Por favor ingrese el email", Toast.LENGTH_LONG).show();
             return;
@@ -80,6 +109,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Por favor ingrese la contraseña", Toast.LENGTH_LONG).show();
             return;
         }
+        if (TextUtils.isEmpty(confirmPassword)) {
+            Toast.makeText(this, "Por favor ingrese nuevamente la contraseña", Toast.LENGTH_LONG).show();
+            return;
+        }
+
 
         //if the email and password are not empty
         //displaying a progress dialog
@@ -116,6 +150,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == textViewSignin) {
             //open login activity when user taps on the already registered textview
             startActivity(new Intent(this, LoginActivity.class));
+        }
+
+        if (view == buttonCancelar) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
     }
 }
