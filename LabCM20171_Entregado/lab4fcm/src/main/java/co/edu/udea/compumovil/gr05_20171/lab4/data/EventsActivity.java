@@ -51,7 +51,7 @@ public class EventsActivity extends AppCompatActivity {
 
         rv.setLayoutManager(new LinearLayoutManager(this));
         listEvents = new ArrayList<>();
-        adapter = new EventsAdapter(listEvents);
+        adapter = new EventsAdapter(getApplicationContext(), listEvents);
         rv.setAdapter(adapter);
 
 
@@ -60,22 +60,29 @@ public class EventsActivity extends AppCompatActivity {
 
         actualizarElementos();
 
+        adapter.setOnItemClickListener(new EventsAdapter.ClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+                Log.i("TAG", "onItemClick position: " + position);
+            }
+
+            @Override
+            public void onItemLongClick(int position, View v) {
+                Log.i("TAG", "onItemLongClick pos = " + position);
+            }
+        });
+
 
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Snackbar.make(view, "Hello Snackbar", Snackbar.LENGTH_LONG).show();
                 Intent in = new Intent(view.getContext(), EventsAdd.class);
-
-
                 startActivityForResult(in, RESULT_OK);
             }
-
         });
         Log.i("LOG", "entroooooo2");
-
     }
-
 
     public void actualizarElementos() {
         eventsRef.addValueEventListener(new ValueEventListener() {

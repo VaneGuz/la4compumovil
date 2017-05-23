@@ -38,7 +38,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsView
         public TextView descripcion;
         public TextView puntuacion;
         public TextView responsable;
-        Activity myMainActivity;
+
 
 
         public EventsViewHolder(View v) {
