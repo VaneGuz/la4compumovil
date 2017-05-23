@@ -1,6 +1,5 @@
 package co.edu.udea.compumovil.gr05_20171.lab4;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -42,20 +41,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         firebaseAuth = FirebaseAuth.getInstance();
 
         //if getCurrentUser does not returns null
-        if(firebaseAuth.getCurrentUser() != null){
+        if (firebaseAuth.getCurrentUser() != null) {
             //that means user is already logged in
             //so close this activity
             finish();
 
-<<<<<<< HEAD
             //and open profile activity
             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
 
         //initializing views
-=======
-        progressDialog = new ProgressDialog(this);
->>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
@@ -76,23 +71,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String password = editTextPassword.getText().toString().trim();
 
         //checking if email and passwords are empty
-<<<<<<< HEAD
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Por favor ingrese el email",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Por favor ingrese la contraseña",Toast.LENGTH_LONG).show();
-=======
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Ingrese el email", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Por favor ingrese el email", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Ingrese la contraseña", Toast.LENGTH_LONG).show();
->>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
+            Toast.makeText(this, "Por favor ingrese la contraseña", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -108,21 +93,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
-<<<<<<< HEAD
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             finish();
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                        }else{
-                            //display some message here
-                            Toast.makeText(MainActivity.this,"Error en el registro",Toast.LENGTH_LONG).show();
-=======
-                        if (task.isSuccessful()) {
-                            //display some message here
-                            Toast.makeText(MainActivity.this, "Registro correcto", Toast.LENGTH_LONG).show();
                         } else {
                             //display some message here
-                            Toast.makeText(MainActivity.this, "Usuario ya registrado", Toast.LENGTH_LONG).show();
->>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
+                            Toast.makeText(MainActivity.this, "Error en el registro", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
@@ -132,28 +108,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-<<<<<<< HEAD
-=======
-        if (view == buttonRegister) {
+
+        if (view == buttonSignup) {
             registerUser();
         }
 
         if (view == textViewSignin) {
-
-        }
-    }
-
-}
->>>>>>> 41d0890b19b0212cd26d7892a8427972d75f6673
-
-        if(view == buttonSignup){
-            registerUser();
-        }
-
-        if(view == textViewSignin){
             //open login activity when user taps on the already registered textview
             startActivity(new Intent(this, LoginActivity.class));
         }
-
     }
 }
