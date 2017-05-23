@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- <TextView
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:text="Crear una Cuenta"
+         android:textAlignment="center"
+         android:textColor="#ffffff"
+         android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+         android:textSize="35dp"
+         android:typeface="serif"/>-->+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tvRegistrar"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.23" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#9C2380"
+                android:hint="Nombre de evento"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#9C2380"
+                android:hint="Descripción"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/puntuacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#9C2380"
+                android:hint="Puntuación"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/responsable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#9C2380"
+                android:hint="Responsable"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#9C2380"
+                android:hint="Fecha"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/ubicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#9C2380"
+                android:hint="Ubicación"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/infoGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#9C2380"
+                android:hint="Información General"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColorHint="#ffffff"
+                android:typeface="serif" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+
+                android:onClick="crearEvento"
+                android:padding="10dp"
+                android:text="Crear Evento"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:typeface="serif" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:orientation="vertical" android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+    <!---->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="textPersonName"--><!--android:ems="10"--><!--android:id="@+id/descripcion"--><!--android:hint="Descripcion" />-->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="number"--><!--android:ems="10"--><!--android:id="@+id/puntuacion"--><!--android:hint="Puntuacion" />-->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="textPersonName"--><!--android:ems="10"--><!--android:id="@+id/ubicacion"--><!--android:hint="Ubicacion" />-->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="textPersonName"--><!--android:ems="10"--><!--android:id="@+id/responsable"--><!--android:hint="Responsable" />-->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="textPersonName"--><!--android:ems="10"--><!--android:id="@+id/fecha"--><!--android:hint="Fecha" />-->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="textPersonName"--><!--android:ems="10"--><!--android:id="@+id/infoGeneral"--><!--android:hint="Informacion General" />-->
+
+    <!--<EditText--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:inputType="textPersonName"--><!--android:ems="10"--><!--android:id="@+id/foto"--><!--android:hint="Foto: URI " />-->
+
+    <!--<Button--><!--android:text="Crear"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:id="@+id/boton"--><!--android:onClick="crearEvento"/>-->
+
+    <!--</LinearLayout>-->

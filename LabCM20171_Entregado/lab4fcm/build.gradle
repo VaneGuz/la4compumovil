@@ -37,6 +37,7 @@ dependencies {
       compile 'com.google.firebase:firebase-auth:10.2'
     compile 'com.android.support:support-annotations:25.1.0'
     compile 'com.github.b3er.rxfirebase:firebase-auth:10.21.2'
+    compile 'com.android.support:design:25.2.0'
 }
 
 //apply plugin: 'com.google.gms.google-services'

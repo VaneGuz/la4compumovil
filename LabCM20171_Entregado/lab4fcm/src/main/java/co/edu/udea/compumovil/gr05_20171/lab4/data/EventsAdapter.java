@@ -24,7 +24,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsView
 
     @Override
     public EventsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_recycler, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_events, parent, false);
         EventsViewHolder holder = new EventsViewHolder(v);
         return holder;
     }
@@ -49,8 +49,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsView
 
         public EventsViewHolder(View itemView) {
             super(itemView);
-            nombre = (TextView) itemView.findViewById(R.id.textViewPerfume);
-            genero = (TextView) itemView.findViewById(R.id.textViewgenero);
+            nombre = (TextView) itemView.findViewById(R.id.tvEvento);
+            genero = (TextView) itemView.findViewById(R.id.tvDescripcion);
 
         }
     }

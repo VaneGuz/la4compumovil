@@ -7,7 +7,7 @@ package co.edu.udea.compumovil.gr05_20171.lab4.data;
 public class Events {
     private String nombre;
     private String descripcion;
-    private String puntuacion;
+    private Long puntuacion;
     private String responsable;
     private String fecha;
     private String ubicacion;
@@ -17,7 +17,7 @@ public class Events {
 
     }
 
-    public Events(String nombre, String descripcion, String puntuacion, String responsable, String fecha, String ubicacion, String infoGeneral, String foto) {
+    public Events(String nombre, String descripcion, Long puntuacion, String responsable, String fecha, String ubicacion, String infoGeneral, String foto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.puntuacion = puntuacion;
@@ -46,11 +46,11 @@ public class Events {
         this.descripcion = descripcion;
     }
 
-    public String getPuntuacion() {
+    public Long getPuntuacion() {
         return puntuacion;
     }
 
-    public void setPuntuacion(String puntuacion) {
+    public void setPuntuacion(Long puntuacion) {
         this.puntuacion = puntuacion;
     }
 
